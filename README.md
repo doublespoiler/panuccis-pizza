@@ -74,4 +74,3 @@ Test 5: It should return a number (price) that considers any number of other ite
 Code: const myPizza = new Pizza ("md-size", "lg-cheese", ["pepperoni", "banana peppers", "olives"], ["lobrau", "slurm"], ["millennia-cake", "popplers-cup"]);
 myPizza.totalCost();
 Expected Result: 63.75
-

@@ -1,3 +1,14 @@
+//Utility Logic 
+function getInputValue(inputArray){
+  const innerTextArray = [];
+  inputArray.forEach(function(element){
+    const elementString = element.value;
+    innerTextArray.push(elementString);
+  });
+  return innerTextArray;
+}
+
+//Business Logic
 function Pizza(size, cheeseAmt, toppings, drinks, other) {
   this.size = size;
   this.cheeseAmt = cheeseAmt;
@@ -16,9 +27,9 @@ Pizza.prototype.totalCost = function(){
   }
 
   
-  switch (this.cheese) {
+  switch (this.cheeseAmt) {
     case("lt-cheese"):
-      total += 1.16;
+      total += 1.616;
       break;
     case("md-cheese"):
       total += 5;
@@ -65,7 +76,7 @@ Pizza.prototype.totalCost = function(){
         total += 10;
         break;
       case("popplers-cup"):
-      case("soylent-coleslaw"):
+      case("space-honey"):
       case("can-ranch"):
       case("can-garlic"):
       case("cheese-weasel"):
@@ -92,11 +103,16 @@ function handleSubmission(event){
   const drinksSelected = document.querySelectorAll("input[name='drink']:checked");
   const othersSelected = document.querySelectorAll("input[name='other']:checked");
   
+  const toppings = getInputValue(toppingsSelected);
+  const drinks = getInputValue(drinksSelected);
+  const others = getInputValue(othersSelected);
+
   const costDisplay = document.querySelector("span#total-cost");
 
   const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others);
   const cost = pizza1.totalCost();
   console.log(cost);
+  console.log(pizza1);
 
   
 }
