@@ -1,7 +1,8 @@
-function Pizza(size, cheese, toppings, other) {
+function Pizza(size, cheese, toppings, drinks, other) {
   this.size = size;
   this.cheese = cheese;
   this.toppings = toppings;
+  this.drinks = drinks;
   this.other = other;
 }
 
@@ -39,6 +40,23 @@ Pizza.prototype.totalCost = function(){
   this.toppings.forEach(function(){
     total += 2;
   });
+
+  this.drinks.forEach(function(element){
+    switch (element) {
+      case("coke"):
+      case("rootbeer"):
+      case("cider"):
+        total += 2
+        break;
+      case("lobrau"):
+      case("pbr"):
+      case("fortran"):
+        total += 10;
+        break;
+      case("slurm"):
+        total += 5;
+    }
+  })
 
   total *= tax;
   return total;

@@ -60,17 +60,17 @@ Code: const myPizza = new Pizza("md-size", "lg-cheese");
 myPizza.totalCost();
 Expected Result: 18.75
 
-Test 4: It should return a number (price) that considers any number of toppings.
+Test 3: It should return a number (price) that considers any number of toppings.
 Code: const myPizza = new Pizza ("md-size", "lg-cheese", ["pepperoni", "banana peppers", "olives"]);
 myPizza.totalCost();
 Expected Result: 26.25
 
-Test 5: It should return a number (price) that considers any number of drinks.
-Code: const my Pizza = new Pizza ("md-size", "lg-cheese", ["pepperoni", "banana peppers", "olives"], ["lobrau", "slurm"]);
+Test 4: It should return a number (price) that considers any number of drinks.
+Code: const myPizza = new Pizza ("md-size", "lg-cheese", ["pepperoni", "banana peppers", "olives"], ["lobrau", "slurm"]);
 myPizza.totalCost();
 Expected Result: 45
 
-Test 6: It should return a number (price) that considers any number of other items.
-Code: const my Pizza = new Pizza ("md-size", "lg-cheese", ["pepperoni", "banana peppers", "olives"], ["lobrau", "slurm"], ["millennia-cake", "popplers-cup"]);
+Test 5: It should return a number (price) that considers any number of other items.
+Code: const myPizza = new Pizza ("md-size", "lg-cheese", ["pepperoni", "banana peppers", "olives"], ["lobrau", "slurm"], ["millennia-cake", "popplers-cup"]);
 myPizza.totalCost();
 Expected Result: 63.75
