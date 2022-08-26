@@ -27,19 +27,17 @@
         <label for="md-size">Medium</label><br>
         <input type="radio" name="size" id="lg-size" value="lg-size">
         <label for="lg-size">Large</label><br>
-        <h3>Toppings</h3>
-        <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
-        <label for="pepperoni">Pepperoni</label><br>
-        <input type="checkbox" name="topping" id="olives" value="olives">
-        <label for="olives">olives</label><br>
-        <input type="checkbox" name="topping" id="hot-peppers" value="hot-peppers">
-        <label for="hot-peppers">Hot Peppers</label><br>
-        <input type="checkbox" name="topping" id="anchovies" value="anchovies">
-        <label for="anchovies">Anchovies</label><br>
-        <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
-        <label for="pepperoni">Pepperoni</label><br>
-        <input type="checkbox" name="topping" id="popplers" value="popplers">
-        <label for="popplers">Popplers</label><br>
+        <h3>Cheese</h3>
+        <input type="radio" name="cheese-type" id="mozzerella" value="mozzerella">
+        <label for="mozzerella">Mozzerella</label><br>
+        <input type="radio" name="cheese-type" id="cheddar" value="cheddar">
+        <label for="cheddar">Cheddar</label><br>
+        <input type="radio" name="cheese-type" id="provolone" value="provolone">
+        <label for="provolone">Provolone</label><br>
+        <input type="radio" name="cheese-type" id="wurmulon" value="womrulon">
+        <label for="womrulon">Wormulonian Cheese (extra cost)</label><br>
+        <input type="radio" name="cheese-type" id="nibblonian" value="nibblonian">
+        <label for="nibblonian">Nibblonian Rearing Cheese (extra cost)</label><br>
         <h3>Cheese Amount</h3>
         <input type="radio" name ="cheese-amt" id="lt-cheese" value="lt-cheese">
         <label for="light">Light</label><br>
@@ -53,18 +51,19 @@
         <label for="xx-cheese">XX-TRA</label><br>
         <input type="radio" name="cheese-amt" id="xxx-cheese" value="xxx-cheese">
         <label for="xxx-cheese">XXX-TRA</label><br>
-        <h3>Cheese</h3>
-        <input type="radio" name="cheese-type" id="mozzerella" value="mozzerella">
-        <label for="mozzerella">Mozzerella</label><br>
-        <input type="radio" name="cheese-type" id="cheddar" value="cheddar">
-        <label for="cheddar">Cheddar</label><br>
-        <input type="radio" name="cheese-type" id="provolone" value="provolone">
-        <label for="provolone">Provolone</label><br>
-        <input type="radio" name="cheese-type" id="wurmulon" value="womrulon">
-        <label for="womrulon">Wormulonian Cheese (extra cost)</label><br>
-        <input type="radio" name="cheese-type" id="nibblonian" value="nibblonian">
-        <label for="nibblonian">Nibblonian Rearing Cheese (extra cost)</label><br>
-        <button type="submit" id="submit-button">Submit</button>
+        <h3>Toppings</h3>
+        <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
+        <label for="pepperoni">Pepperoni</label><br>
+        <input type="checkbox" name="topping" id="olives" value="olives">
+        <label for="olives">olives</label><br>
+        <input type="checkbox" name="topping" id="hot-peppers" value="hot-peppers">
+        <label for="hot-peppers">Hot Peppers</label><br>
+        <input type="checkbox" name="topping" id="anchovies" value="anchovies">
+        <label for="anchovies">Anchovies</label><br>
+        <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
+        <label for="pepperoni">Pepperoni</label><br>
+        <input type="checkbox" name="topping" id="popplers" value="popplers">
+        <label for="popplers">Popplers</label><br>
       </div>
       <div class="col-md-5">
         <h3>Drinks</h3>
@@ -86,7 +85,18 @@
         <input type="checkbox" name="other" id="millennia-cake" value="millennia-cake">
         <label for="millennia-cake">Millennia Cake</label><br>
         <input type="checkbox" name="other" id="popplers-cup" value="millennia-cake">
-        <label for="popplers-cup">Popplers (a la carte)</label><br>
+        <label for="popplers-cup">Popplers Cup</label><br>
+        <input type="checkbox" name="other" id="soylent-coleslaw" value="soylent-coleslaw">
+        <label for="soylent-coleslaw">Soylent Colelsaw</label><br>
+        <input type="checkbox" name="other" id="spice-weasel" value="spice-weasel">
+        <label for="spice-weasel">Extra Spice Weasel</label><br>
+        <input type="checkbox" name="other" id="cheese-weasel" value="cheese-weasel">
+        <label for="cheese-weasel">Extra Cheese Weasel</label><br>
+        <input type="checkbox" name="other" id="can-ranch" value="can-ranch">
+        <label for="can-ranch">Mom's Can of Ranch</label><br>
+        <input type="checkbox" name="other" id="can-garlic" value="can-garlic">
+        <label for="can-garlic">Mom's Can of Garlic Sauce</label><br>
+        <button type="submit" id="submit-button">Submit</button>
       </div>
       <div class="col-md-2" id="order-div">
         <h3>Your order</h3>

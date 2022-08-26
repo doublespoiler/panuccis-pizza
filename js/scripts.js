@@ -60,10 +60,15 @@ Pizza.prototype.totalCost = function(){
 
   this.other.forEach(function(element){
     switch (element) {
-      case ("millennia-cake"):
+      case("millennia-cake"):
+      case("spice-weasel"):
         total += 10;
         break;
       case("popplers-cup"):
+      case("soylent-coleslaw"):
+      case("can-ranch"):
+      case("can-garlic"):
+      case("cheese-weasel"):
         total += 5;
         break;
     }
