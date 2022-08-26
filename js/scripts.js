@@ -11,8 +11,31 @@ Pizza.prototype.totalCost = function(){
   if (this.size === "lg-size"){
     total += 15;
   } else {
-    total += 6.16; 
+    total += 5; 
   }
+
+  
+  switch (this.cheese) {
+    case("lt-cheese"):
+      total += 1.16;
+      break;
+    case("md-cheese"):
+      total += 5;
+      break;
+    case("lg-cheese"):
+      total += 10;
+      break;
+    case("x-cheese"):
+      total += 25;
+      break;
+    case("xx-cheese"):
+      total += 50;
+      break;
+    case("xxx-cheese"):
+      total += 69;
+      break;
+  }
+
   total *= tax;
   return total;
 }

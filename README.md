@@ -56,7 +56,7 @@ myPizza.totalCost();
 Expected Result: 7.7
 
 Test 2: It sould return a number (price) that considers the amount of cheese
-const myPizza = new Pizza("md-size", "lg-cheese");
+Code: const myPizza = new Pizza("md-size", "lg-cheese");
 myPizza.totalCost();
 Expected Result: 18.75
 
