@@ -107,14 +107,21 @@ function handleSubmission(event){
   const drinks = getInputValue(drinksSelected);
   const others = getInputValue(othersSelected);
 
-  const costDisplay = document.querySelector("span#total-cost");
+  
 
   const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others);
   const cost = pizza1.totalCost();
   console.log(cost);
+  displayCost(cost);
   console.log(pizza1);
 
   
+}
+
+function displayCost(cost){
+  const costDisplay = document.querySelector("span#total-cost");
+  cost = "$" + cost;
+  costDisplay.innerText = cost;
 }
 
 // medium pizza light cheese 6.16
