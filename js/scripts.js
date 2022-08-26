@@ -5,7 +5,17 @@ function Pizza(size, cheese, toppings, other) {
   this.other = other;
 }
 
-
+Pizza.prototype.totalCost = function(){
+  const tax = 1.25;
+  let total = 0;
+  if (this.size === "lg-size"){
+    total += 15;
+  } else {
+    total += 6.16; 
+  }
+  total *= tax;
+  return total;
+}
 
 // medium pizza light cheese 6.16
 // small pizza  5
