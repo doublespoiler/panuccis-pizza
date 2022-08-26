@@ -36,6 +36,10 @@ Pizza.prototype.totalCost = function(){
       break;
   }
 
+  this.toppings.forEach(function(){
+    total += 2;
+  });
+
   total *= tax;
   return total;
 }
