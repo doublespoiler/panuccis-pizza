@@ -1,6 +1,6 @@
-function Pizza(size, cheese, toppings, drinks, other) {
+function Pizza(size, cheeseAmt, toppings, drinks, other) {
   this.size = size;
-  this.cheese = cheese;
+  this.cheeseAmt = cheeseAmt;
   this.toppings = toppings;
   this.drinks = drinks;
   this.other = other;
@@ -37,7 +37,7 @@ Pizza.prototype.totalCost = function(){
       break;
   }
 
-  this.toppings.forEach(function(){
+  this.toppings.forEach(function(element){
     total += 2;
   });
 
@@ -76,6 +76,29 @@ Pizza.prototype.totalCost = function(){
 
   total *= tax;
   return total;
+}
+
+//UI Logic
+window.addEventListener("load", function(){
+  document.querySelector("form#pizza-form").addEventListener("submit", handleSubmission);
+})
+
+function handleSubmission(event){
+  event.preventDefault();
+  const size = document.querySelector("input[name='size']:checked").value;
+  const cheese = document.querySelector("input[name='cheese-type']:checked").value;
+  const cheeseAmt = document.querySelector("input[name='cheese-amt']:checked").value;
+  const toppingsSelected = document.querySelectorAll("input[name='topping']:checked");
+  const drinksSelected = document.querySelectorAll("input[name='drink']:checked");
+  const othersSelected = document.querySelectorAll("input[name='other']:checked");
+  
+  const costDisplay = document.querySelector("span#total-cost");
+
+  const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others);
+  const cost = pizza1.totalCost();
+  console.log(cost);
+
+  
 }
 
 // medium pizza light cheese 6.16
