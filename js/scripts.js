@@ -58,6 +58,17 @@ Pizza.prototype.totalCost = function(){
     }
   })
 
+  this.other.forEach(function(element){
+    switch (element) {
+      case ("millennia-cake"):
+        total += 10;
+        break;
+      case("popplers-cup"):
+        total += 5;
+        break;
+    }
+  })
+
   total *= tax;
   return total;
 }
