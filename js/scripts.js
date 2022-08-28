@@ -16,7 +16,15 @@ function Pizza(size, cheeseAmt, toppings, drinks, other, cheese) {
   this.toppings = toppings;
   this.drinks = drinks;
   this.other = other;
+  this.list = convertOrder(this);
 }
+
+class Toppings extends Pizza {
+  pushToPizza(input){
+    this.prices.push(input);
+  }
+}
+
 
 Pizza.prototype.totalCost = function(){
   const tax = 1.25;
@@ -27,7 +35,6 @@ Pizza.prototype.totalCost = function(){
     total += 5; 
   }
 
-  
   switch (this.cheeseAmt) {
     case("lt-cheese"):
       total += 1.616;
@@ -49,16 +56,19 @@ Pizza.prototype.totalCost = function(){
       break;
   }
 
+  const toppingsArray = []
+
   this.toppings.forEach(function(element){
     total += 2;
   });
+
 
   this.drinks.forEach(function(element){
     switch (element) {
       case("coke"):
       case("rootbeer"):
       case("cider"):
-        total += 2
+        total += 2;
         break;
       case("lobrau"):
       case("pbr"):
@@ -67,10 +77,12 @@ Pizza.prototype.totalCost = function(){
         break;
       case("slurm"):
         total += 5;
+        break;
     }
-  })
+  });
 
   this.other.forEach(function(element){
+
     switch (element) {
       case("millennia-cake"):
       case("spice-weasel"):
@@ -84,7 +96,8 @@ Pizza.prototype.totalCost = function(){
         total += 5;
         break;
     }
-  })
+
+  });
 
   total *= tax;
   return total;
@@ -112,10 +125,14 @@ function handleSubmission(event){
 
   const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others, cheese);
   const cost = pizza1.totalCost();
-  const order = convertOrder(pizza1);
   console.log(pizza1);
   console.log(cost);
+
   displayCost(cost);
+  const myOrder = convertOrder(pizza1);
+  const myCost = listCosts(myOrder);
+  displayOrder(myOrder, myCost);
+
   
 
   
@@ -142,13 +159,75 @@ function convertOrder(order){
       convertedArray.push(element);
       console.log("pushing " + element);
     }
-  })
+  });
   return convertedArray;
 }
 
-function displayOrder(order){
-  const orderList = [];
-  
+function listCosts(convertedArray){
+  const listArray = []
+  convertedArray.forEach(function(element){
+    switch (element) {
+      case("lt-cheese"):
+        listArray.push("1.616");
+        break;
+      case("coke"):
+      case("rootbeer"):
+      case("cider"):
+        listArray.push("2");
+        break;
+      case("md-cheese"):
+      case("sm-size"):
+      case("md-size"):
+      case("slurm"):
+      case("popplers-cup"):
+      case("space-honey"):
+      case("can-ranch"):
+      case("can-garlic"):
+      case("cheese-weasel"):
+        listArray.push("5");
+        break;
+      case("lg-cheese"):
+      case("lg-size"):
+      case("lobrau"):
+      case("pbr"):
+      case("fortran"):
+      case("millennia-cake"):
+      case("spice-weasel"):
+        listArray.push("10");
+        break;
+      case("x-cheese"):
+        listArray.push("25");
+        break;
+      case("xx-cheese"):
+        listArray.push("50");
+        break;
+      case("xxx-cheese"):
+        listArray.push("69");
+        break;
+      default:
+        listArray.push("2");
+    }
+  });
+
+  return(listArray);
+}
+
+function displayOrder(order, costs){
+  const orderList = document.createElement("ol");
+  const costsList = document.createElement("ul");
+  order.forEach(function(element){
+    const li = document.createElement("li");
+    li.innerText = element;
+    orderList.append(li);
+  });
+  costs.forEach(function(element){
+    const li = document.createElement("li");
+    li.innerText = element;
+    costsList.append(li);
+  });
+  let myBody = document.querySelector("body");
+  myBody.append(orderList);
+  myBody.append(costsList);
 }
 
 // medium pizza light cheese 6.16
