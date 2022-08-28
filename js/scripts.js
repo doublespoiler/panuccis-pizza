@@ -121,7 +121,7 @@ function handleSubmission(event){
 
 function displayCost(cost){
   const costDisplay = document.querySelector("span#total-cost");
-  cost = "$" + cost;
+  cost = "$" + cost.toFixed(2);
   costDisplay.innerText = cost;
 }
 
