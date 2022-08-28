@@ -19,7 +19,7 @@
   </div>
   <form id="pizza-form">
     <div class="row content-row">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <h3>Size<span class="text-danger">*</span></h3>
         <input type="radio" name="size" id="sm-size" value="sm-size" required>
         <label for="sm-size">Small</label><br>
@@ -97,13 +97,12 @@
         <h6 class="text-danger">* = required</h6>
         <button type="submit" id="submit-button">Submit</button>
       </div>
-      <div class="col-md-2" id="order-div">
+      <div class="col-md-3" id="order-div">
         <h3>Your order</h3>
-        <div class="row" id="total-div">
-          <ul id="order-list">
-          </ul>
-          <h3>Total:</h3><span id="total-cost">$0.00</span>
-        </div>
+        <div  id="order-list"></div>
+        <h5>Subtotal: <span id="subtotal"></span></h5>
+        <h5>Tax: <span id="total-tax"></span></h5>
+        <h5>Total: <span id="total-cost"></span></h5>
       </div>
     </div>
   </form>

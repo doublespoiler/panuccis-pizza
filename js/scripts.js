@@ -16,7 +16,6 @@ function Pizza(size, cheeseAmt, toppings, drinks, other, cheese) {
   this.toppings = toppings;
   this.drinks = drinks;
   this.other = other;
-  this.list = convertOrder(this);
 }
 
 class Toppings extends Pizza {
@@ -139,9 +138,19 @@ function handleSubmission(event){
 }
 
 function displayCost(cost){
+  const subDisplay = document.querySelector("span#subtotal");
+  const taxDisplay = document.querySelector("span#total-tax");
   const costDisplay = document.querySelector("span#total-cost");
+  
+  let tax = cost * 0.25;
+  let sub = cost / 1.25;
+  sub = "$" + sub.toFixed(2);
+  tax = "$" + tax.toFixed(2);
   cost = "$" + cost.toFixed(2);
+  subDisplay.innerText = sub;
+  taxDisplay.innerText = tax;
   costDisplay.innerText = cost;
+
 }
 
 function convertOrder(order){
@@ -204,6 +213,11 @@ function listCosts(convertedArray){
       case("xxx-cheese"):
         listArray.push("69");
         break;
+      case("mozzerella"):
+      case("provolone"):
+      case("cheddar"):
+        listArray.push("");
+        break;
       default:
         listArray.push("2");
     }
@@ -214,20 +228,27 @@ function listCosts(convertedArray){
 
 function displayOrder(order, costs){
   const orderList = document.createElement("ol");
-  const costsList = document.createElement("ul");
-  order.forEach(function(element){
+
+  for (let i=0; i < order.length; i++){
     const li = document.createElement("li");
-    li.innerText = element;
+    li.innerText = order[i] + "..." + costs[i];
     orderList.append(li);
-  });
-  costs.forEach(function(element){
-    const li = document.createElement("li");
-    li.innerText = element;
-    costsList.append(li);
-  });
-  let myBody = document.querySelector("body");
-  myBody.append(orderList);
-  myBody.append(costsList);
+  }
+  // const costsList = document.createElement("ul");
+  // order.forEach(function(element){
+  //   const li = document.createElement("li");
+  //   li.innerText = element;
+  //   orderList.append(li);
+  // });
+  // costs.forEach(function(element){
+  //   const li = document.createElement("li");
+  //   li.innerText = element;
+  //   costsList.append(li);
+  // });
+  let orderDisplay = document.getElementById("order-list");
+  // let costDisplay = document.getElementById("price-list");
+  orderDisplay.append(orderList);
+  // costDisplay.append(costsList);
 }
 
 // medium pizza light cheese 6.16

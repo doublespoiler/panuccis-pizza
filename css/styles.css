@@ -31,7 +31,13 @@
 #wrapper{
   margin-top: 1em;
   margin-bottom: 1em;
-  width: 1000px;
   margin: auto;
+}
 
+ol{
+  list-style: none;
+}
+
+.inline{
+  display:inline;
 }
