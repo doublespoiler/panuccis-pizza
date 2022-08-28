@@ -112,9 +112,11 @@ function handleSubmission(event){
 
   const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others, cheese);
   const cost = pizza1.totalCost();
+  const order = convertOrder(pizza1);
+  console.log(pizza1);
   console.log(cost);
   displayCost(cost);
-  console.log(pizza1);
+  
 
   
 }
@@ -126,19 +128,21 @@ function displayCost(cost){
 }
 
 function convertOrder(order){
+  const processArray = Object.values(order);
   const convertedArray = [];
-  for(let i= 0; i<order.length; i++) {
-    let selector = 'label[for=' + order[i].id + ']';
-    let toPush = document.querySelector(selector);
-    if (Array.isArray(order[i])){
-      for(let i= 0; i<toPush.length; i++) {
-        selector = 'label[for=' + order[i].id + ']';
-        toPush = document.querySelector(selector);
-      }
+  processArray.forEach(function(element){
+    if(Array.isArray(element)){
+      console.log("found array");
+      const subArray = Object.values(element);
+      subArray.forEach(function(element){
+        convertedArray.push(element);
+        console.log("pushing " + element);
+      });
+    } else {
+      convertedArray.push(element);
+      console.log("pushing " + element);
     }
-    let text = toPush.innerText;
-    convertedArray.push(text);
-  }
+  })
   return convertedArray;
 }
 
