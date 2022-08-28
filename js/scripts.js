@@ -9,9 +9,10 @@ function getInputValue(inputArray){
 }
 
 //Business Logic
-function Pizza(size, cheeseAmt, toppings, drinks, other) {
+function Pizza(size, cheeseAmt, toppings, drinks, other, cheese) {
   this.size = size;
   this.cheeseAmt = cheeseAmt;
+  this.cheese = cheese;
   this.toppings = toppings;
   this.drinks = drinks;
   this.other = other;
@@ -109,7 +110,7 @@ function handleSubmission(event){
 
   
 
-  const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others);
+  const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others, cheese);
   const cost = pizza1.totalCost();
   console.log(cost);
   displayCost(cost);
@@ -122,6 +123,28 @@ function displayCost(cost){
   const costDisplay = document.querySelector("span#total-cost");
   cost = "$" + cost;
   costDisplay.innerText = cost;
+}
+
+function convertOrder(order){
+  const convertedArray = [];
+  for(let i= 0; i<order.length; i++) {
+    let selector = 'label[for=' + order[i].id + ']';
+    let toPush = document.querySelector(selector);
+    if (Array.isArray(order[i])){
+      for(let i= 0; i<toPush.length; i++) {
+        selector = 'label[for=' + order[i].id + ']';
+        toPush = document.querySelector(selector);
+      }
+    }
+    let text = toPush.innerText;
+    convertedArray.push(text);
+  }
+  return convertedArray;
+}
+
+function displayOrder(order){
+  const orderList = [];
+  
 }
 
 // medium pizza light cheese 6.16

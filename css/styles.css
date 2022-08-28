@@ -1,0 +1,37 @@
+.footer-row{
+  text-align:center;
+
+}
+
+.footer-row p{
+  margin: 0px;
+}
+
+.header-row{
+  text-align:center;
+  margin:auto;
+}
+
+.header-col::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+#header-image{
+  float:left;
+}
+
+.container{
+  border:5px double black;
+  padding-bottom: 0.5em;
+}
+
+#wrapper{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 1000px;
+  margin: auto;
+
+}
