@@ -26,7 +26,6 @@ class Toppings extends Pizza {
 
 
 Pizza.prototype.totalCost = function(){
-  const tax = 1.25;
   let total = 0;
   if (this.size === "lg-size"){
     total += 15;
@@ -97,8 +96,7 @@ Pizza.prototype.totalCost = function(){
     }
 
   });
-
-  total *= tax;
+  total = total * 1.25;
   return total;
 }
 
@@ -127,10 +125,11 @@ function handleSubmission(event){
   console.log(pizza1);
   console.log(cost);
 
-  displayCost(cost);
+
   const myOrder = convertOrder(pizza1);
   const myCost = listCosts(myOrder);
   displayOrder(myOrder, myCost);
+  displayCost(cost);
 
   
 
@@ -141,9 +140,9 @@ function displayCost(cost){
   const subDisplay = document.querySelector("span#subtotal");
   const taxDisplay = document.querySelector("span#total-tax");
   const costDisplay = document.querySelector("span#total-cost");
-  
-  let tax = cost * 0.25;
-  let sub = cost / 1.25;
+  let sub = cost * 0.8;
+  let tax = sub * 0.25;
+
   sub = "$" + sub.toFixed(2);
   tax = "$" + tax.toFixed(2);
   cost = "$" + cost.toFixed(2);
@@ -234,21 +233,8 @@ function displayOrder(order, costs){
     li.innerText = order[i] + "..." + costs[i];
     orderList.append(li);
   }
-  // const costsList = document.createElement("ul");
-  // order.forEach(function(element){
-  //   const li = document.createElement("li");
-  //   li.innerText = element;
-  //   orderList.append(li);
-  // });
-  // costs.forEach(function(element){
-  //   const li = document.createElement("li");
-  //   li.innerText = element;
-  //   costsList.append(li);
-  // });
   let orderDisplay = document.getElementById("order-list");
-  // let costDisplay = document.getElementById("price-list");
   orderDisplay.append(orderList);
-  // costDisplay.append(costsList);
 }
 
 // medium pizza light cheese 6.16
