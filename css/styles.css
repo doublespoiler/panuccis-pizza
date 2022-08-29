@@ -3,7 +3,6 @@ body {
   background-size: cover;
 }
 
-
 ol{
   list-style: none;
 }
@@ -20,19 +19,12 @@ ol{
   color: white;
 }
 
-.header-col::after{
-  content: "";
-  clear: both;
-  display: table;
-}
-
 #content-container{
+  margin-top: 1em;
   border:10px double black;
   padding-bottom: 0.5em;
-  margin-top: 1em;
   background-color: white;
 }
-
 
 #header-image{
   float:left;
@@ -42,5 +34,4 @@ ol{
   margin-top: 1em;
   margin-bottom: 1em;
   margin: auto;
-
 }
