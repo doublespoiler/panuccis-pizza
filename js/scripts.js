@@ -24,7 +24,6 @@ class Toppings extends Pizza {
   }
 }
 
-
 Pizza.prototype.totalCost = function(){
   let total = 0;
   if (this.size === "lg-size"){
@@ -54,8 +53,6 @@ Pizza.prototype.totalCost = function(){
       break;
   }
 
-  const toppingsArray = []
-
   this.toppings.forEach(function(element){
     total += 2;
   });
@@ -80,7 +77,6 @@ Pizza.prototype.totalCost = function(){
   });
 
   this.other.forEach(function(element){
-
     switch (element) {
       case("millennia-cake"):
       case("spice-weasel"):
@@ -94,7 +90,6 @@ Pizza.prototype.totalCost = function(){
         total += 5;
         break;
     }
-
   });
   total = total * 1.25;
   return total;
@@ -140,22 +135,6 @@ function handleReset(){
   subDisplay.innerText = "";
   taxDisplay.innerText = "";
   costDisplay.innerText = "";
-}
-
-function displayCost(cost){
-  const subDisplay = document.querySelector("span#subtotal");
-  const taxDisplay = document.querySelector("span#total-tax");
-  const costDisplay = document.querySelector("span#total-cost");
-  let sub = cost * 0.8;
-  let tax = sub * 0.25;
-
-  sub = "$" + sub.toFixed(2);
-  tax = "$" + tax.toFixed(2);
-  cost = "$" + cost.toFixed(2);
-  subDisplay.innerText = sub;
-  taxDisplay.innerText = tax;
-  costDisplay.innerText = cost;
-
 }
 
 function convertOrder(order){
@@ -227,20 +206,32 @@ function listCosts(convertedArray){
         listArray.push("2");
     }
   });
-
   return(listArray);
 }
 
 function displayOrder(order, costs){
   const orderList = document.createElement("ol");
-
+  const orderDisplay = document.getElementById("order-list");
   for (let i=0; i < order.length; i++){
     const li = document.createElement("li");
     li.innerText = order[i] + "..." + costs[i];
     orderList.append(li);
   }
-  let orderDisplay = document.getElementById("order-list");
   orderDisplay.append(orderList);
+}
+
+function displayCost(cost){
+  const subDisplay = document.querySelector("span#subtotal");
+  const taxDisplay = document.querySelector("span#total-tax");
+  const costDisplay = document.querySelector("span#total-cost");
+  let sub = cost * 0.8;
+  let tax = sub * 0.25;
+  sub = "$" + sub.toFixed(2);
+  tax = "$" + tax.toFixed(2);
+  cost = "$" + cost.toFixed(2);
+  subDisplay.innerText = sub;
+  taxDisplay.innerText = tax;
+  costDisplay.innerText = cost;
 }
 
 function easterEgg(cost){
@@ -250,26 +241,3 @@ function easterEgg(cost){
     headerImage.setAttribute("alt", "Just like my pin number!");
   }
 }
-
-// medium pizza light cheese 6.16
-// small pizza  5
-// medium pizza 5
-// large pizza 15
-//light cheese 1.16
-// medium cheese 5
-// heavy cheese 10
-// x cheese 25
-// xx cheese 50
-// xxx cheese 69
-
-
-// toppings 2 each 
-  //unless sardines, 10,000,000
-  // later, if price > 9,000,000, we'll display something else?
-
-// coke, rootbeer, cider 2
-// slurm 5
-//beer 10
-
-//millennia cake 10
-//poppler cup 5
