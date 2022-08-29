@@ -1,15 +1,21 @@
-.footer-row{
-  text-align:center;
-
+ol{
+  list-style: none;
 }
 
-.footer-row p{
-  margin: 0px;
+.container{
+  border:5px double black;
+  padding-bottom: 0.5em;
+  margin-top: 1em;
 }
 
 .header-row{
   text-align:center;
   margin:auto;
+}
+
+.footer-row{
+  text-align:center;
+  margin: 0px;
 }
 
 .header-col::after{
@@ -18,26 +24,12 @@
   display: table;
 }
 
-
 #header-image{
   float:left;
-}
-
-.container{
-  border:5px double black;
-  padding-bottom: 0.5em;
 }
 
 #wrapper{
   margin-top: 1em;
   margin-bottom: 1em;
   margin: auto;
-}
-
-ol{
-  list-style: none;
-}
-
-.inline{
-  display:inline;
 }
