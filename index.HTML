@@ -9,109 +9,110 @@
 </head>
 <body>
 <div id="wrapper">
-<div class="container" id="content-container">
-  <div class="row header-row">
-    <div class="col-md-12 header-col">
-      <img id="header-image" src="images/panucci.png" alt="Do not tip Delivery Boy!"><br>
-      <img src="images/logo.png" alt="Panucci's Pizza"><br>
-      <h3>A quaint turn-of-the-millennia style Pizzeria</h3>
-      <h5>1234 W 56th St.<br>New New York, New New York 10001</h5>
+  <div class="container" id="content-container">
+    <div class="row header-row">
+      <div class="col-md-12 header-col">
+        <img id="header-image" src="images/panucci.png" alt="Do not tip Delivery Boy!"><br>
+        <img src="images/logo.png" alt="Panucci's Pizza"><br>
+        <h3>A quaint turn-of-the-millennia style Pizzeria</h3>
+        <h5>1234 W 56th St.<br>New New York, New New York 10001</h5>
+      </div>
+    </div>
+    <form id="pizza-form">
+      <div class="row content-row">
+        <div class="col-md-4">
+          <h3>Size<span class="text-danger">*</span></h3>
+          <input type="radio" name="size" id="sm-size" value="sm-size" required>
+          <label for="sm-size">Small</label><br>
+          <input type="radio" name="size" id="md-size" value="md-size">
+          <label for="md-size">Medium</label><br>
+          <input type="radio" name="size" id="lg-size" value="lg-size">
+          <label for="lg-size">Large</label><br>
+          <h3>Cheese<span class="text-danger">*</span></h3>
+          <input type="radio" name="cheese-type" id="mozzerella" value="mozzerella" required>
+          <label for="mozzerella">Mozzerella</label><br>
+          <input type="radio" name="cheese-type" id="cheddar" value="cheddar">
+          <label for="cheddar">Cheddar</label><br>
+          <input type="radio" name="cheese-type" id="provolone" value="provolone">
+          <label for="provolone">Provolone</label><br>
+          <h3>Cheese Amount<span class="text-danger">*</span></h3>
+          <input type="radio" name ="cheese-amt" id="lt-cheese" value="lt-cheese" required>
+          <label for="lt-cheese">Light</label><br>
+          <input type="radio" name ="cheese-amt" id="md-cheese" value="md-cheese">
+          <label for="md-cheese">Medium</label><br>
+          <input type="radio" name="cheese-amt" id="lg-cheese" value="lg-cheese">
+          <label for="lg-cheese">Heavy</label><br>
+          <input type="radio" name ="cheese-amt" id="x-cheese" value="x-cheese">
+          <label for="x-cheese">X-TRA</label><br>
+          <input type="radio" name ="cheese-amt" id="xx-cheese" value="xx-cheese">
+          <label for="xx-cheese">XX-TRA</label><br>
+          <input type="radio" name="cheese-amt" id="xxx-cheese" value="xxx-cheese">
+          <label for="xxx-cheese">XXX-TRA</label><br>
+          <h3>Toppings</h3>
+          <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
+          <label for="pepperoni">Pepperoni</label><br>
+          <input type="checkbox" name="topping" id="olives" value="olives">
+          <label for="olives">Olives</label><br>
+          <input type="checkbox" name="topping" id="hot-peppers" value="hot-peppers">
+          <label for="hot-peppers">Hot Peppers</label><br>
+          <input type="checkbox" name="topping" id="anchovies" value="anchovies">
+          <label for="anchovies">Anchovies</label><br>
+          <input type="checkbox" name="topping" id="veg" value="veg">
+          <label for="veg">"Premium Vegetable" mix</label><br>
+          <input type="checkbox" name="topping" id="popplers" value="popplers">
+          <label for="popplers">Popplers</label><br>
+        </div>
+        <div class="col-md-5">
+          <h3>Drinks</h3>
+          <input type="checkbox" name="drink" id="slurm" value="slurm">
+          <label for="slurm">Slurm</label><br>
+          <input type="checkbox" name="drink" id="coke" value="coke">
+          <label for="coke">Mom's Coca Cola Can</label><br>
+          <input type="checkbox" name="drink" id="rootbeer" value="rootbeer">
+          <label for="rootbeer">Mom's Old Fashioned Root Beer '00</label><br>
+          <input type="checkbox" name="drink" id="cider" value="cider">
+          <label for="cider">Mom's Old Korea Style Cider</label><br>
+          <input type="checkbox" name="drink" id="lobrau" value="lobrau">
+          <label for="lobrau">LöBrau (2% ABV)</label><br>
+          <input type="checkbox" name="drink" id="pbr" value="pbr">
+          <label for="pbr">Pabst Blue Robot (2% ABV, 20% OBV)</label><br>
+          <input type="checkbox" name="drink" id="fortran" value="fortran">
+          <label for="fortran">Olde Fortran Malt Liqour (10% ABV, 10% OBV)</label><br>
+          <h3>Dessert/Other</h3>
+          <input type="checkbox" name="other" id="millennia-cake" value="millennia-cake">
+          <label for="millennia-cake">Millennia Cake</label><br>
+          <input type="checkbox" name="other" id="popplers-cup" value="millennia-cake">
+          <label for="popplers-cup">Popplers Cup</label><br>
+          <input type="checkbox" name="other" id="space-honey" value="space-honey">
+          <label for="space-honey">Space Honey Biscuit</label><br>
+          <input type="checkbox" name="other" id="spice-weasel" value="spice-weasel">
+          <label for="spice-weasel">Extra Spice Weasel</label><br>
+          <input type="checkbox" name="other" id="cheese-weasel" value="cheese-weasel">
+          <label for="cheese-weasel">Extra Cheese Weasel</label><br>
+          <input type="checkbox" name="other" id="can-ranch" value="can-ranch">
+          <label for="can-ranch">Mom's Can of Ranch</label><br>
+          <input type="checkbox" name="other" id="can-garlic" value="can-garlic">
+          <label for="can-garlic">Mom's Can of Garlic Sauce</label><br><br>
+          <label for="notes-input">Notes/Delivery Instructions:</label><br>
+          <textarea name="notes-input" cols="40" rows="5"></textarea><br>
+          <h6 class="text-danger">* = required</h6>
+          <button type="submit" id="submit-button">Submit</button> <button type="reset" id="reset">Reset</button>
+        </div>
+        <div class="col-md-3" id="order-div">
+          <h3>Your order</h3>
+          <div id="order-list"></div>
+          <h5>Subtotal: <span id="subtotal"></span></h5>
+          <h5>Tax: <span id="total-tax"></span></h5>
+          <h5>Total: <span id="total-cost"></span></h5>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+    <div class="footer-row">
+      <p>&#169; 3001 MomCorp - "You gotta do what you gotta do."</p>
     </div>
   </div>
-  <form id="pizza-form">
-    <div class="row content-row">
-      <div class="col-md-4">
-        <h3>Size<span class="text-danger">*</span></h3>
-        <input type="radio" name="size" id="sm-size" value="sm-size" required>
-        <label for="sm-size">Small</label><br>
-        <input type="radio" name="size" id="md-size" value="md-size">
-        <label for="md-size">Medium</label><br>
-        <input type="radio" name="size" id="lg-size" value="lg-size">
-        <label for="lg-size">Large</label><br>
-        <h3>Cheese<span class="text-danger">*</span></h3>
-        <input type="radio" name="cheese-type" id="mozzerella" value="mozzerella" required>
-        <label for="mozzerella">Mozzerella</label><br>
-        <input type="radio" name="cheese-type" id="cheddar" value="cheddar">
-        <label for="cheddar">Cheddar</label><br>
-        <input type="radio" name="cheese-type" id="provolone" value="provolone">
-        <label for="provolone">Provolone</label><br>
-        <h3>Cheese Amount<span class="text-danger">*</span></h3>
-        <input type="radio" name ="cheese-amt" id="lt-cheese" value="lt-cheese" required>
-        <label for="lt-cheese">Light</label><br>
-        <input type="radio" name ="cheese-amt" id="md-cheese" value="md-cheese">
-        <label for="md-cheese">Medium</label><br>
-        <input type="radio" name="cheese-amt" id="lg-cheese" value="lg-cheese">
-        <label for="lg-cheese">Heavy</label><br>
-        <input type="radio" name ="cheese-amt" id="x-cheese" value="x-cheese">
-        <label for="x-cheese">X-TRA</label><br>
-        <input type="radio" name ="cheese-amt" id="xx-cheese" value="xx-cheese">
-        <label for="xx-cheese">XX-TRA</label><br>
-        <input type="radio" name="cheese-amt" id="xxx-cheese" value="xxx-cheese">
-        <label for="xxx-cheese">XXX-TRA</label><br>
-        <h3>Toppings</h3>
-        <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
-        <label for="pepperoni">Pepperoni</label><br>
-        <input type="checkbox" name="topping" id="olives" value="olives">
-        <label for="olives">Olives</label><br>
-        <input type="checkbox" name="topping" id="hot-peppers" value="hot-peppers">
-        <label for="hot-peppers">Hot Peppers</label><br>
-        <input type="checkbox" name="topping" id="anchovies" value="anchovies">
-        <label for="anchovies">Anchovies</label><br>
-        <input type="checkbox" name="topping" id="veg" value="veg">
-        <label for="veg">"Premium Vegetable" mix</label><br>
-        <input type="checkbox" name="topping" id="popplers" value="popplers">
-        <label for="popplers">Popplers</label><br>
-      </div>
-      <div class="col-md-5">
-        <h3>Drinks</h3>
-        <input type="checkbox" name="drink" id="slurm" value="slurm">
-        <label for="slurm">Slurm</label><br>
-        <input type="checkbox" name="drink" id="coke" value="coke">
-        <label for="coke">Mom's Coca Cola Can</label><br>
-        <input type="checkbox" name="drink" id="rootbeer" value="rootbeer">
-        <label for="rootbeer">Mom's Old Fashioned Root Beer '00</label><br>
-        <input type="checkbox" name="drink" id="cider" value="cider">
-        <label for="cider">Mom's Old Korea Style Cider</label><br>
-        <input type="checkbox" name="drink" id="lobrau" value="lobrau">
-        <label for="lobrau">LöBrau (2% ABV)</label><br>
-        <input type="checkbox" name="drink" id="pbr" value="pbr">
-        <label for="pbr">Pabst Blue Robot (2% ABV, 20% OBV)</label><br>
-        <input type="checkbox" name="drink" id="fortran" value="fortran">
-        <label for="fortran">Olde Fortran Malt Liqour (10% ABV, 10% OBV)</label><br>
-        <h3>Dessert/Other</h3>
-        <input type="checkbox" name="other" id="millennia-cake" value="millennia-cake">
-        <label for="millennia-cake">Millennia Cake</label><br>
-        <input type="checkbox" name="other" id="popplers-cup" value="millennia-cake">
-        <label for="popplers-cup">Popplers Cup</label><br>
-        <input type="checkbox" name="other" id="space-honey" value="space-honey">
-        <label for="space-honey">Space Honey Biscuit</label><br>
-        <input type="checkbox" name="other" id="spice-weasel" value="spice-weasel">
-        <label for="spice-weasel">Extra Spice Weasel</label><br>
-        <input type="checkbox" name="other" id="cheese-weasel" value="cheese-weasel">
-        <label for="cheese-weasel">Extra Cheese Weasel</label><br>
-        <input type="checkbox" name="other" id="can-ranch" value="can-ranch">
-        <label for="can-ranch">Mom's Can of Ranch</label><br>
-        <input type="checkbox" name="other" id="can-garlic" value="can-garlic">
-        <label for="can-garlic">Mom's Can of Garlic Sauce</label><br><br>
-        <label for="notes-input">Notes/Delivery Instructions:</label><br>
-        <textarea name="notes-input" cols="40" rows="5"></textarea><br>
-        <h6 class="text-danger">* = required</h6>
-        <button type="submit" id="submit-button">Submit</button> <button type="reset" id="reset">Reset</button>
-      </div>
-      <div class="col-md-3" id="order-div">
-        <h3>Your order</h3>
-        <div  id="order-list"></div>
-        <h5>Subtotal: <span id="subtotal"></span></h5>
-        <h5>Tax: <span id="total-tax"></span></h5>
-        <h5>Total: <span id="total-cost"></span></h5>
-      </div>
-    </div>
-  </form>
-  
 </div>
-<div class="container"><div class="footer-row"><p>&#169; 3001 MomCorp - "You gotta do what you gotta do."</p></div>
-</div>
-</div>
-
 </body>
-</html>z
+</html>
