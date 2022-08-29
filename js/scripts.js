@@ -130,10 +130,7 @@ function handleSubmission(event){
   const myCost = listCosts(myOrder);
   displayOrder(myOrder, myCost);
   displayCost(cost);
-
-  
-
-  
+  easterEgg(cost);
 }
 
 function displayCost(cost){
@@ -235,6 +232,14 @@ function displayOrder(order, costs){
   }
   let orderDisplay = document.getElementById("order-list");
   orderDisplay.append(orderList);
+}
+
+function easterEgg(cost){
+  const headerImage= document.getElementById("header-image");
+  if (cost === 10.77){
+    headerImage.setAttribute("src", "images/easteregg.png");
+    headerImage.setAttribute("alt", "Just like my pin number!");
+  }
 }
 
 // medium pizza light cheese 6.16
