@@ -103,34 +103,43 @@ Pizza.prototype.totalCost = function(){
 //UI Logic
 window.addEventListener("load", function(){
   document.querySelector("form#pizza-form").addEventListener("submit", handleSubmission);
+  document.querySelector("form#pizza-form").addEventListener("reset", handleReset);
 })
 
 function handleSubmission(event){
   event.preventDefault();
+  const orderDisplay = document.getElementById("order-list");
+  orderDisplay.innerHTML="";
   const size = document.querySelector("input[name='size']:checked").value;
   const cheese = document.querySelector("input[name='cheese-type']:checked").value;
   const cheeseAmt = document.querySelector("input[name='cheese-amt']:checked").value;
   const toppingsSelected = document.querySelectorAll("input[name='topping']:checked");
   const drinksSelected = document.querySelectorAll("input[name='drink']:checked");
   const othersSelected = document.querySelectorAll("input[name='other']:checked");
-  
   const toppings = getInputValue(toppingsSelected);
   const drinks = getInputValue(drinksSelected);
   const others = getInputValue(othersSelected);
-
-  
-
   const pizza1 = new Pizza(size, cheeseAmt, toppings, drinks, others, cheese);
   const cost = pizza1.totalCost();
-  console.log(pizza1);
-  console.log(cost);
-
-
   const myOrder = convertOrder(pizza1);
   const myCost = listCosts(myOrder);
   displayOrder(myOrder, myCost);
   displayCost(cost);
   easterEgg(cost);
+}
+
+function handleReset(){
+  const headerImage= document.getElementById("header-image");
+  const orderDisplay = document.getElementById("order-list");
+  const subDisplay = document.querySelector("span#subtotal");
+  const taxDisplay = document.querySelector("span#total-tax");
+  const costDisplay = document.querySelector("span#total-cost");
+  headerImage.setAttribute("src", "images/panucci.png");
+  headerImage.setAttribute("alt", "Do not tip delivery boy!");
+  orderDisplay.innerHTML="";
+  subDisplay.innerText = "";
+  taxDisplay.innerText = "";
+  costDisplay.innerText = "";
 }
 
 function displayCost(cost){
