@@ -1,11 +1,11 @@
-ol{
-  list-style: none;
+body {
+  background-image: url('../images/oldnewyork.png');
+  background-size: cover;
 }
 
-.container{
-  border:5px double black;
-  padding-bottom: 0.5em;
-  margin-top: 1em;
+
+ol{
+  list-style: none;
 }
 
 .header-row{
@@ -16,6 +16,8 @@ ol{
 .footer-row{
   text-align:center;
   margin: 0px;
+  background-color:black;
+  color: white;
 }
 
 .header-col::after{
@@ -23,6 +25,14 @@ ol{
   clear: both;
   display: table;
 }
+
+#content-container{
+  border:10px double black;
+  padding-bottom: 0.5em;
+  margin-top: 1em;
+  background-color: white;
+}
+
 
 #header-image{
   float:left;
@@ -32,4 +42,5 @@ ol{
   margin-top: 1em;
   margin-bottom: 1em;
   margin: auto;
+
 }
